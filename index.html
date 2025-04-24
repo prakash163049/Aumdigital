@@ -10,10 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slider-content.css">
+    <!-- Modern Hero CSS -->
+    <link rel="stylesheet" href="modern-hero.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Animated Background -->
@@ -25,10 +30,40 @@
         <div class="shape"></div>
     </div>
 
+    <!-- Top Bar with Contact Details -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <a href="mailto:aumdigimqrketing@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            aumdigimarketing@gmail.com
+                        </a>
+                        <a href="tel:+919316053654" class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            +91 9737536519
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-links-top">
+                        <a href="https://www.linkedin.com/in/priyanka-udani-024318330/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61563426389548" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/9316053654" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/aum_digital_marketing_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <!-- <a href="https://www.linkedin.com/in/priyanka-udani-024318330/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
+                <img src="images/Aum.png" alt="AUM Digital Logo" class="navbar-logo">
                 <span class="brand-text">AUM Digital Marketing</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,64 +74,190 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Services
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="services/web-design.html"><i class="fas fa-globe"></i> Website Design & Development</a></li>
-                            <li><a class="dropdown-item" href="services/social-media.html"><i class="fas fa-hashtag"></i> Social Media Posts</a></li>
-                            <li><a class="dropdown-item" href="services/logo-design.html"><i class="fas fa-paint-brush"></i> Logo Design</a></li>
-                            <li><a class="dropdown-item" href="services/banner-design.html"><i class="fas fa-image"></i> Banner Design</a></li>
-                            <li><a class="dropdown-item" href="services/pamphlet-design.html"><i class="fas fa-file-alt"></i> Pamphlet & Flyer Design</a></li>
-                            <li><a class="dropdown-item" href="services/card-design.html"><i class="fas fa-envelope"></i> Invitation & Birthday Cards</a></li>
-                            <li><a class="dropdown-item" href="services/brochure-design.html"><i class="fas fa-address-card"></i> Brochure & Business Card Design</a></li>
-                            <li><a class="dropdown-item" href="services/motion-graphics.html"><i class="fas fa-film"></i> Motion Graphics & Letterhead</a></li>
-                            <li><a class="dropdown-item" href="services/printing.html"><i class="fas fa-print"></i> Printing Services</a></li>
-                            <li><a class="dropdown-item" href="services/google-business.html"><i class="fas fa-store"></i> Google Business Profile Setup</a></li>
-                            <li><a class="dropdown-item" href="services/branding.html"><i class="fas fa-bullhorn"></i> Branding & Advertising</a></li>
-                            <li><a class="dropdown-item" href="services/digital-marketing.html"><i class="fas fa-chart-line"></i> Digital Marketing Strategies</a></li>
+                            <li><a class="dropdown-item" href="services/graphics-design.html"><i class="fas fa-paint-brush"></i> Graphics & Creative Designs</a></li>
+                            <li><a class="dropdown-item" href="services/web-design.html"><i class="fas fa-globe"></i> Web Development</a></li>
+                            <li><a class="dropdown-item" href="services/digital-marketing.html"><i class="fas fa-chart-line"></i> Digital Marketing & SEO</a></li>
+                            <li><a class="dropdown-item" href="services/branding.html"><i class="fas fa-bullhorn"></i> Branding & Identity</a></li>
                         </ul>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li> -->
-                    
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" href="#about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="faq.html">FAQ</a>
-                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="display-4 fw-bold mb-4">Your One-Stop Digital Marketing & Branding Partner</h1>
-                    <p class="lead mb-4">Transforming businesses with creative, result-driven solutions that elevate your brand presence and drive growth.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary btn-lg me-3">Get Started</a>
-                        <a href="#portfolio" class="btn btn-outline-primary btn-lg">View Portfolio</a>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="hero-image">
-                        <img src="images/LOGO.jpeg" alt="Digital Marketing Illustration" class="img-fluid">
+    <!-- Modern Hero Section with Image Slider -->
+    <section id="home" class="modern-hero">
+        <div class="hero-particles">
+            <div id="particles-js"></div>
+        </div>
+        
+        <!-- Slider Heading -->
+        <!-- <div class="container">
+            <div class="slider-heading" data-aos="fade-right">
+                <h2 class="display-5 fw-bold">Transform Your Digital Presence</h2>
+                <p class="lead">Elevate your brand with our innovative digital solutions</p>
+                
+                Content without transparent block -->
+                <!-- <div class="content-wrapper">
+                    <div class="slider-buttons">
+                        <a href="services/graphics-design.html" class="btn btn-primary">
+                            <span>Explore Service</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div> -->
+        
+        <!-- Background Image Slider -->
+        <div class="hero-slider-background">
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <!-- Graphics & Creative Designs Slide -->
+                    <div class="carousel-item active">
+                        <img src="images/image-slider-photo (2).jpg" class="d-block w-100" alt="Graphics & Creative Designs">
+                        <div class="slider-content">
+                            <h1>Graphics & Creative Designs</h1>
+                            <p>Transform your ideas into stunning visual content that captures attention and communicates your message effectively.</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <i class="fas fa-paint-brush"></i>
+                                    <span>Logo Design</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-image"></i>
+                                    <span>Banner Design</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-share-alt"></i>
+                                    <span>Social Media</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-palette"></i>
+                                    <span>Brand Identity</span>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="services/graphics-design.html" class="btn btn-primary">Explore Service</a>
+                                <a href="#contact" class="btn btn-outline">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web Development Slide -->
+                    <div class="carousel-item">
+                        <img src="images/image-slider-photo-2.jpg" class="d-block w-100" alt="Web Development">
+                        <div class="slider-content">
+                            <h1>Web Development</h1>
+                            <p>Create stunning, responsive websites that drive results and elevate your brand's online presence.</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <i class="fas fa-laptop"></i>
+                                    <span>Responsive Design</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-search"></i>
+                                    <span>SEO Ready</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Mobile First</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Fast Loading</span>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="services/web-design.html" class="btn btn-primary">Explore Service</a>
+                                <a href="#contact" class="btn btn-outline">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Digital Marketing & SEO Slide -->
+                    <div class="carousel-item">
+                        <img src="images/home-page-slider-3.jpg" class="d-block w-100" alt="Digital Marketing & SEO">
+                        <div class="slider-content">
+                            <h1>Digital Marketing & SEO</h1>
+                            <p>Boost your online presence and reach your target audience with strategic digital marketing and SEO solutions.</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>SEO Optimization</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-ad"></i>
+                                    <span>Social Media</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email Marketing</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bullhorn"></i>
+                                    <span>Content Marketing</span>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <a href="services/digital-marketing.html" class="btn btn-primary">Explore Service</a>
+                                <a href="#contact" class="btn btn-outline">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Branding & Identity Slide -->
+                    <div class="carousel-item">
+                        <img src="images/home-page-slider-4.jpg" class="d-block w-100" alt="Branding & Identity">
+                        <div class="slider-content">
+                            <h1>Branding & Identity</h1>
+                            <p>Build a strong and memorable brand identity that resonates with your audience and sets you apart from competitors.</p>
+                            <div class="features">
+                                <div class="feature">
+                                    <i class="fas fa-bullseye"></i>
+                                    <span>Brand Strategy</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-palette"></i>
+                                    <span>Visual Identity</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-book"></i>
+                                    <span>Brand Guidelines</span>
+                    </div>
+                                <div class="feature">
+                                    <i class="fas fa-comments"></i>
+                                    <span>Brand Voice</span>
+                </div>
+            </div>
+                            <div class="buttons">
+                                <a href="services/branding.html" class="btn btn-primary">Explore Service</a>
+                                <a href="#contact" class="btn btn-outline">Get Started</a>
+        </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="overlay"></div>
         </div>
     </section>
 
@@ -119,7 +280,7 @@
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="intro-image">
                         <div class="image-wrapper">
-                            <img src="images/digitalmarketing.jpg" alt="Our Team at Work" class="img-fluid rounded-3">
+                            <img src="images/aboutuspage-photo.jpeg" alt="Our Team at Work" class="img-fluid rounded-3">
                         </div>
                     </div>
                 </div>
@@ -128,278 +289,302 @@
     </section>
 
     <!-- Mission & Vision Section -->
-    <section class="mission-vision py-5 bg-light">
+    <section class="mission-vision-new">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-up">
-                    <div class="mission-card">
-                        <div class="mission-icon">
+            <div class="mission-vision-wrapper">
+                <div class="mission-card-new" data-aos="fade-right">
+                    <div class="card-glow"></div>
+                    <div class="mission-content">
+                        <div class="icon-container">
                             <i class="fas fa-bullseye"></i>
                         </div>
                         <h3>Our Mission</h3>
-                        <p>To empower businesses with creative and innovative digital solutions that not only increase brand visibility but also drive tangible growth and success.</p>
+                        <p>Empowering businesses with creative digital solutions that increase visibility and drive growth in the competitive marketplace.</p>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="vision-card">
-                        <div class="vision-icon">
+                
+                <div class="vision-card-new" data-aos="fade-left">
+                    <div class="card-glow"></div>
+                    <div class="vision-content">
+                        <div class="icon-container">
                             <i class="fas fa-eye"></i>
                         </div>
                         <h3>Our Vision</h3>
-                        <p>To become the most trusted digital marketing partner for businesses, offering holistic solutions that lead to long-term success.</p>
+                        <p>To become the most trusted digital partner for businesses, delivering solutions that establish new benchmarks in the industry.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Values Section -->
-    <section class="values py-5">
+    <!-- Our Core Values Section -->
+    <section class="values">
         <div class="container">
-            <div class="section-header text-center mb-5" data-aos="fade-up">
+            <div class="values-header text-center">
                 <h2 class="section-title">Our Core Values</h2>
-                <p class="section-subtitle">The Principles That Guide Our Success</p>
+                <p class="section-subtitle">The Principles That Drive Our Success</p>
+                <div class="value-divider"></div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="value-card">
-                        <div class="value-icon">
+            
+            <!-- 3D Prism Layout - Desktop -->
+            <div class="values-prism-container">
+                <div class="prism-ring">
+                    <!-- Innovation -->
+                    <div class="prism-item" data-value="innovation">
+                        <div class="prism-content">
+                            <div class="prism-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Innovation</h3>
+                            <p class="prism-description">We constantly push boundaries and embrace new technologies to deliver cutting-edge solutions.</p>
+                            <ul class="prism-bullet-points">
+                                <li>Fostering creativity</li>
+                                <li>Embracing new technologies</li>
+                                <li>Forward thinking approach</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Integrity -->
+                    <div class="prism-item" data-value="integrity">
+                        <div class="prism-content">
+                            <div class="prism-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Integrity</h3>
+                            <p class="prism-description">We maintain the highest standards of honesty and transparency in all our dealings.</p>
+                            <ul class="prism-bullet-points">
+                                <li>Honest communication</li>
+                                <li>Ethical business practices</li>
+                                <li>Building lasting trust</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Collaboration -->
+                    <div class="prism-item" data-value="collaboration">
+                        <div class="prism-content">
+                            <div class="prism-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Collaboration</h3>
+                            <p class="prism-description">We believe in the power of teamwork and working closely with our clients.</p>
+                            <ul class="prism-bullet-points">
+                                <li>Client-centered approach</li>
+                                <li>Open communication</li>
+                                <li>Diverse perspectives</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Excellence -->
+                    <div class="prism-item" data-value="excellence">
+                        <div class="prism-content">
+                            <div class="prism-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Excellence</h3>
+                            <p class="prism-description">We strive for excellence in every project, delivering the best possible results.</p>
+                            <ul class="prism-bullet-points">
+                                <li>Attention to detail</li>
+                                <li>Continuous improvement</li>
+                                <li>Result-oriented approach</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Layout -->
+            <div class="values-mobile">
+                <div class="values-mobile-grid">
+                    <!-- Innovation -->
+                    <div class="values-mobile-item" data-value="innovation">
+                        <div class="mobile-icon">
                             <i class="fas fa-lightbulb"></i>
                         </div>
-                        <h4>Innovation</h4>
+                        <h3>Innovation</h3>
                         <p>We constantly push boundaries and embrace new technologies to deliver cutting-edge solutions.</p>
+                        <ul class="mobile-bullet-points">
+                            <li>Fostering creativity</li>
+                            <li>Embracing new technologies</li>
+                            <li>Forward thinking approach</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="value-card">
-                        <div class="value-icon">
+                    
+                    <!-- Integrity -->
+                    <div class="values-mobile-item" data-value="integrity">
+                        <div class="mobile-icon">
                             <i class="fas fa-handshake"></i>
                         </div>
-                        <h4>Integrity</h4>
+                        <h3>Integrity</h3>
                         <p>We maintain the highest standards of honesty and transparency in all our dealings.</p>
+                        <ul class="mobile-bullet-points">
+                            <li>Honest communication</li>
+                            <li>Ethical business practices</li>
+                            <li>Building lasting trust</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="value-card">
-                        <div class="value-icon">
+                    
+                    <!-- Collaboration -->
+                    <div class="values-mobile-item" data-value="collaboration">
+                        <div class="mobile-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h4>Collaboration</h4>
+                        <h3>Collaboration</h3>
                         <p>We believe in the power of teamwork and working closely with our clients.</p>
+                        <ul class="mobile-bullet-points">
+                            <li>Client-centered approach</li>
+                            <li>Open communication</li>
+                            <li>Diverse perspectives</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="value-card">
-                        <div class="value-icon">
+                    
+                    <!-- Excellence -->
+                    <div class="values-mobile-item" data-value="excellence">
+                        <div class="mobile-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h4>Excellence</h4>
+                        <h3>Excellence</h3>
                         <p>We strive for excellence in every project, delivering the best possible results.</p>
+                        <ul class="mobile-bullet-points">
+                            <li>Attention to detail</li>
+                            <li>Continuous improvement</li>
+                            <li>Result-oriented approach</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+            
+            <div class="values-cta">
+                <p class="values-cta-text">Let our values guide your digital success</p>
+                <a href="#contact" class="values-cta-button">Work With Us</a>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services py-5">
-        <div class="container">
-            <div class="section-header text-center mb-4" data-aos="fade-up">
-                <span class="section-badge">Our Services</span>
-                <h2 class="section-title">Comprehensive Digital Solutions</h2>
-                <p class="section-subtitle">We offer a wide range of services to help your business grow in the digital world</p>
-            </div>
-            
-            <div class="services-grid">
-                <!-- Website Design & Development -->
-                <div class="service-item" data-aos="fade-up">
-                    <div class="service-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Website Design & Development</h3>
-                        <p>Create stunning, responsive websites that drive results.</p>
-                        <a href="services/web-design.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Social Media Posts -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="50">
-                    <div class="service-icon">
-                        <i class="fas fa-hashtag"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Social Media Posts</h3>
-                        <p>Engaging content for all social platforms.</p>
-                        <a href="services/social-media.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Logo Design -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                    <div class="service-content">
-                        <h3>Logo Design</h3>
-                        <p>Design unique and memorable logos for your brand.</p>
-                        <a href="services/logo-design.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Banner Design -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon">
-                            <i class="fas fa-image"></i>
-                        </div>
-                    <div class="service-content">
-                        <h3>Banner Design</h3>
-                        <p>Create eye-catching banners that grab attention.</p>
-                        <a href="services/banner-design.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Pamphlet & Flyer Design -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Pamphlet & Flyer Design</h3>
-                        <p>Design professional marketing materials.</p>
-                        <a href="services/pamphlet-design.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Invitation & Birthday Cards -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Invitation & Birthday Cards</h3>
-                        <p>Create beautiful cards for special occasions.</p>
-                        <a href="services/card-design.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Brochure & Business Card Design -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-icon">
-                        <i class="fas fa-address-card"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Brochure & Business Card Design</h3>
-                        <p>Design professional business materials.</p>
-                        <a href="services/brochure-design.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Motion Graphics & Letterhead -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-icon">
-                        <i class="fas fa-film"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Motion Graphics & Letterhead</h3>
-                        <p>Create engaging motion graphics and letterheads.</p>
-                        <a href="services/motion-graphics.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Printing Services -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="700">
-                    <div class="service-icon">
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Printing Services</h3>
-                        <p>High-quality printing for marketing materials.</p>
-                        <a href="services/printing.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Google Business Profile -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="800">
-                    <div class="service-icon">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Google Business Profile Setup</h3>
-                        <p>Optimize your business presence on Google.</p>
-                        <a href="services/google-business.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Branding & Advertising -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="900">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                        </div>
-                    <div class="service-content">
-                        <h3>Branding & Advertising</h3>
-                        <p>Comprehensive branding and advertising solutions.</p>
-                        <a href="services/branding.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Digital Marketing -->
-                <div class="service-item" data-aos="fade-up" data-aos-delay="1000">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                        </div>
-                    <div class="service-content">
-                        <h3>Digital Marketing Strategies</h3>
-                        <p>Data-driven marketing strategies for growth.</p>
-                        <a href="services/digital-marketing.html" class="service-link">View More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio py-5 bg-light">
+    <section id="services" class="services-new py-5">
         <div class="container">
             <div class="section-header text-center mb-5" data-aos="fade-up">
-                <span class="section-badge">Portfolio</span>
-                <h2 class="section-title">Our Recent Work</h2>
-                <p class="section-subtitle">Explore our latest projects and success stories</p>
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title">Featured Digital Solutions</h2>
+                <p class="section-subtitle">Explore our most popular services that help businesses thrive in the digital world</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="portfolio-item">
-                        <img src="images/portfolio1.jpg" alt="Portfolio Item 1" class="img-fluid">
-                        <div class="portfolio-overlay">
-                            <h4>Website Design</h4>
-                            <p>E-commerce Website</p>
+            
+            <div class="services-container">
+                <!-- Graphics & Creative Designs -->
+                <div class="service-box creative" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-box-inner">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
                         </div>
+                        <div class="service-content">
+                            <h3>Graphics & Creative Designs</h3>
+                            <p>Transform your ideas into stunning visual content that captures attention and communicates your message effectively.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">Logo Design</span>
+                                <span class="feature-tag">Banner Design</span>
+                                <span class="feature-tag">Social Media</span>
+                            </div>
+                            <a href="services/graphics-design.html" class="service-link">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="service-hover-effect"></div>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="portfolio-item">
-                        <img src="images/portfolio2.jpg" alt="Portfolio Item 2" class="img-fluid">
-                        <div class="portfolio-overlay">
-                            <h4>Brand Identity</h4>
-                            <p>Logo & Branding</p>
+
+                <!-- Web Development -->
+                <div class="service-box web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-box-inner">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="service-content">
+                            <h3>Web Development</h3>
+                        <p>Create stunning, responsive websites that drive results and elevate your brand's online presence.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">Responsive Design</span>
+                                <span class="feature-tag">SEO Ready</span>
+                                <span class="feature-tag">User Experience</span>
+                            </div>
+                            <a href="services/web-design.html" class="service-link">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
+                        <div class="service-hover-effect"></div>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="portfolio-item">
-                        <img src="images/portfolio3.jpg" alt="Portfolio Item 3" class="img-fluid">
-                        <div class="portfolio-overlay">
-                            <h4>Social Media</h4>
-                            <p>Marketing Campaign</p>
+
+                <!-- Digital Marketing & SEO -->
+                <div class="service-box marketing" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-box-inner">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
+                        <div class="service-content">
+                            <h3>Digital Marketing & SEO</h3>
+                            <p>Boost your online presence and reach your target audience with strategic digital marketing and SEO solutions.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">SEO</span>
+                                <span class="feature-tag">Social Media</span>
+                                <span class="feature-tag">Content</span>
+                            </div>
+                            <a href="services/digital-marketing.html" class="service-link">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                    </div>
+                        <div class="service-hover-effect"></div>
                     </div>
                 </div>
+
+                <!-- Branding & Identity -->
+                <div class="service-box branding" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-box-inner">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Branding & Identity</h3>
+                            <p>Build a strong and memorable brand identity that resonates with your audience and sets you apart from competitors.</p>
+                            <div class="service-features">
+                                <span class="feature-tag">Brand Strategy</span>
+                                <span class="feature-tag">Visual Identity</span>
+                                <span class="feature-tag">Guidelines</span>
+                    </div>
+                            <a href="services/branding.html" class="service-link">
+                                <span>Learn More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="service-hover-effect"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                <a href="services.html" class="btn-view-all">
+                    <span>View All Services</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us py-5 bg-light">
+    <section class="why-choose-us py-5">
+        <div class="animated-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="half-hidden-text">AUM DIGITAL</div>
         <div class="container">
             <div class="section-header text-center mb-5" data-aos="fade-up">
                 <h2 class="section-title">Why Choose Us</h2>
@@ -412,7 +597,8 @@
                             <i class="fas fa-check-circle"></i>
                         </div>
                         <h4>Expert Team</h4>
-                        <p>Our team consists of industry experts with years of experience.</p>
+                        <p>Our team consists of industry experts with years of experience in digital marketing and design solutions.</p>
+                        <a href="#" class="btn-learn">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
@@ -421,7 +607,8 @@
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h4>Progressive Approach</h4>
-                        <p>We stay ahead of trends to keep your brand modern and relevant.</p>
+                        <p>We stay ahead of trends and technologies to keep your brand modern, relevant and competitive in the market.</p>
+                        <a href="#" class="btn-learn">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
@@ -430,7 +617,8 @@
                             <i class="fas fa-bullseye"></i>
                         </div>
                         <h4>Result-Driven</h4>
-                        <p>Our strategies are designed to deliver measurable results.</p>
+                        <p>Our strategies and solutions are designed to deliver measurable results and tangible growth for your business.</p>
+                        <a href="#" class="btn-learn">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
@@ -439,7 +627,8 @@
                             <i class="fas fa-users"></i>
                         </div>
                         <h4>Client-Focused</h4>
-                        <p>Your success is our priority, with dedicated support throughout.</p>
+                        <p>Your success is our priority, with dedicated support and personalized attention throughout our partnership.</p>
+                        <a href="#" class="btn-learn">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -462,7 +651,7 @@
                     <div class="testimonials-track">
                         <!-- Testimonial 1 -->
                         <div class="testimonial-card" data-aos="fade-up">
-                            <div class="testimonial-content">
+                        <div class="testimonial-content">
                                 <div class="rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -471,20 +660,20 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                                 <i class="fas fa-quote-left"></i>
-                                <p>"I'm satisfied with your services. Providing good images & festival related images with my branding."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <img src="images/client1.jpg" alt="Client 1" class="rounded-circle">
-                                <div class="author-info">
-                                    <h5>Nimesh C. Shah</h5>
-                                    <span>CEO, Company Name</span>
-                                </div>
-                            </div>
+                            <p>We had a fantastic experience working with Aum Digital Marketing! Their expertise and dedication have truly helped elevate our online presence. From strategic planning to execution, their team provided insightful guidance, creative solutions, and excellent support throughout.</p>
                         </div>
+                        <div class="testimonial-author">
+                                <!-- <img src="images/client1.jpg" alt="Client 1" class="rounded-circle"> -->
+                                <div class="author-info">
+                            <h5>Vishwanath Impex</h5>
+                                    <!-- <span>CEO, Company Name</span> -->
+                        </div>
+                    </div>
+                </div>
 
                         <!-- Testimonial 2 -->
                         <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                            <div class="testimonial-content">
+                        <div class="testimonial-content">
                                 <div class="rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -493,20 +682,20 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                                 <i class="fas fa-quote-left"></i>
-                                <p>"We are very much happy with your support. Interaction with the clients has drastically increased because of your Marketing Stuff."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <img src="images/client2.jpg" alt="Client 2" class="rounded-circle">
-                                <div class="author-info">
-                                    <h5>Sriram Reddy</h5>
-                                    <span>Director, Company Name</span>
-                                </div>
-                            </div>
+                            <p> The Approach and the Chain of Communication is quite well and good.Infact the Response is Satisfactory…Creativity and Skills are too good….Overall The Way of Balancing the Task and delievering it to the Client is Perfect….Sometimes the work gets delayed but in the end Perfect and better work always takes time</p>
                         </div>
+                        <div class="testimonial-author">
+                                <!-- <img src="images/logo-desing.jpeg" alt="Client 2" class="rounded-circle"> -->
+                                <div class="author-info">
+                            <h5>K navalbhai jewellers</h5>
+                                    <!-- <span>Director, Company Name</span> -->
+                        </div>
+                    </div>
+                </div>
 
                         <!-- Testimonial 3 -->
                         <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                            <div class="testimonial-content">
+                        <div class="testimonial-content">
                                 <div class="rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -515,13 +704,15 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                                 <i class="fas fa-quote-left"></i>
-                                <p>"Your services have been very useful to me. I really like the post design and the continuous support provided by you."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <img src="images/client3.jpg" alt="Client 3" class="rounded-circle">
+                            <p>"It was a nice experience to work with you and especially to understand the customer need with perfect."
+
+                                Thanks"</p>
+                        </div>
+                        <div class="testimonial-author">
+                                <!-- <img src="images/client3.jpg" alt="Client 3" class="rounded-circle"> -->
                                 <div class="author-info">
-                                    <h5>Chetan Jani</h5>
-                                    <span>Manager, Company Name</span>
+                            <h5>Kunj Patel</h5>
+                                    <span>Company name : UISL</span>
                                 </div>
                             </div>
                         </div>
@@ -535,54 +726,103 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact py-5 bg-light">
+    <section id="contact" class="contact py-5">
+        <div class="contact-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
         <div class="container">
             <div class="section-header text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="section-subtitle">Let's Discuss Your Project</p>
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Get in touch with our creative team</p>
             </div>
-            <div class="row">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="contact-info">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>123 Business Street, City, Country</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="contact-cards-wrapper">
+                        <!-- Contact Card 1 - Phone -->
+                        <div class="contact-card" data-aos="fade-up">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <h3>Call Us</h3>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Phone Support</h4>
+                                    <!-- <p>Available 24/7</p> -->
+                                    <a href="tel:+919316053654" class="contact-link">
+                                        <i class="fas fa-phone"></i>
+                                        +91 93160 53654
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+91 9316053654</p>
+
+                        <!-- Contact Card 2 - Email -->
+                        <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <h3>Email Us</h3>
+                                </div>
+                                <div class="card-back">
+                                    <h4>Email Support</h4>
+                                    <p>Quick Response</p>
+                                    <a href="mailto:info@aumdigitalmarketing.com" class="contact-link">
+                                        <i class="fas fa-envelope"></i>
+                                        aumdigimqrketing@gmail.com
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>info@aumdigital.com</p>
-                            </div>
+
+                        <!-- Contact Card 3 - Location -->
+                        <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card-inner">
+                                <div class="card-front">
+                                    <div class="icon-wrapper">
+                                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                                    <h3>Visit Us</h3>
+                </div>
+                                <div class="card-back">
+                                    <h4>Location</h4>
+                                    <p>Bhavnagar, Gujarat</p>
+                                    <!-- <a href="https://maps.google.com" target="_blank" class="contact-link">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        View on Map
+                                    </a> -->
+            </div>
+        </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <form class="contact-form">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+
+                    <!-- Social Media Links -->
+                    <div class="social-connect" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-center mb-4">Connect With Us</h3>
+                        <div class="social-links-wrapper">
+                            <a href="https://www.facebook.com/profile.php?id=61563426389548" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://wa.me/9316053654" class="social-link whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="https://www.instagram.com/aum_digital_marketing_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/priyanka-udani-024318330/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-link linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
                         </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Subject" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -609,8 +849,8 @@
                             <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
                                     The timeline for website design projects varies depending on the complexity and requirements. A basic website typically takes 2-4 weeks, while more complex projects may take 6-8 weeks. We'll provide a detailed timeline during our initial consultation.
-                                </div>
-                            </div>
+                        </div>
+                        </div>
                         </div>
 
                         <!-- Question 2 -->
@@ -623,8 +863,8 @@
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
                                     The choice of social media platforms depends on your target audience and business type. We recommend focusing on platforms where your audience is most active. For example, Instagram and Facebook are great for visual content, LinkedIn for B2B, and Twitter for real-time engagement.
-                                </div>
-                            </div>
+                        </div>
+                </div>
                         </div>
 
                         <!-- Question 3 -->
@@ -638,7 +878,7 @@
                                 <div class="accordion-body">
                                     We use various metrics to measure campaign success, including website traffic, conversion rates, engagement rates, and ROI. We provide regular reports and analytics to track progress and make data-driven adjustments to optimize performance.
                                 </div>
-                            </div>
+                        </div>
                         </div>
                     </div>
                     <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
@@ -648,6 +888,12 @@
             </div>
         </div>
     </section>
+
+    <!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/9316053654" class="whatsapp-chat" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="chat-tooltip">Chat with us!</span>
+    </a>
 
     <!-- Footer -->
     <footer class="footer py-4">
@@ -662,7 +908,6 @@
                     <ul class="footer-links">
                             <li><a href="#home">Home</a></li>
                             <li><a href="#services">Services</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
@@ -671,9 +916,9 @@
                     <h5>Connect With Us</h5>
                         <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61563426389548"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.instagram.com/aum_digital_marketing_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/9316053654"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/aum_digital_marketing_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/priyanka-udani-024318330/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -688,4 +933,4 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
