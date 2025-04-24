@@ -7,7 +7,6 @@ A modern, responsive website for Aum Digital Marketing agency showcasing their s
 - Responsive design that works on all devices
 - Modern and clean user interface
 - Smooth scrolling navigation
-- Interactive portfolio gallery
 - Contact form with validation
 - Animated sections and elements
 - Mobile-friendly navigation menu
@@ -26,9 +25,6 @@ A modern, responsive website for Aum Digital Marketing agency showcasing their s
 2. Create an `images` folder in the root directory
 3. Add the following images to the `images` folder:
    - `hero-bg.jpg` - A high-quality background image for the hero section
-   - `portfolio1.jpg` - Logo design portfolio image
-   - `portfolio2.jpg` - Banner design portfolio image
-   - `portfolio3.jpg` - Social media portfolio image
 
 4. Open `index.html` in your web browser to view the website
 
@@ -50,7 +46,6 @@ The website uses CSS variables for easy color customization. You can modify the 
 
 ### Content
 - Update the text content in `index.html`
-- Replace portfolio images in the `images` folder
 - Update contact information and social media links
 - Modify the services section to match your offerings
 
