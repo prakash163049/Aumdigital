@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brochure Design - AUM Digital Marketing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6e8efb;
+            --secondary-color: #a777e3;
+            --accent-color: #ff6b6b;
+        }
+
+        .service-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .service-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../images/pattern.png') repeat;
+            opacity: 0.1;
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .service-details {
+            background: #f8f9fa;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .feature-item {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -moz-background-clip: text;
+            -o-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            mask: linear-gradient(to right, #fff, #ccc);
+            -webkit-mask: linear-gradient(to right, #fff, #ccc);
+            -moz-mask: linear-gradient(to right, #fff, #ccc);
+            -o-mask: linear-gradient(to right, #fff, #ccc);
+        }
+
+        .service-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .sidebar-card ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-card ul li i {
+            color: var(--primary-color);
+        }
+
+        .brochure-gallery {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../images/pattern.png') repeat;
+            opacity: 0.1;
+            animation: patternMove 20s linear infinite;
+        }
+
+        .cta-section .btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            -moz-background-clip: padding-box;
+            -o-background-clip: padding-box;
+            mask: linear-gradient(to right, #fff, #ccc);
+            -webkit-mask: linear-gradient(to right, #fff, #ccc);
+            -moz-mask: linear-gradient(to right, #fff, #ccc);
+            -o-mask: linear-gradient(to right, #fff, #ccc);
+            transition: all 0.3s ease;
+        }
+
+        .cta-section .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/Aum.png" alt="AUM Digital Logo" class="navbar-logo">
+                <span class="brand-text">AUM Digital Marketing</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="graphics-design.html"><i class="fas fa-paint-brush"></i> Graphics & Creative Designs</a></li>
+                            <li><a class="dropdown-item" href="web-design.html"><i class="fas fa-globe"></i> Web Development</a></li>
+                            <li><a class="dropdown-item" href="digital-marketing.html"><i class="fas fa-chart-line"></i> Digital Marketing & SEO</a></li>
+                            <li><a class="dropdown-item" href="branding.html"><i class="fas fa-bullhorn"></i> Branding & Identity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Header -->
+    <section class="service-header">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="section-badge">Our Services</span>
+                    <h1 class="display-4 fw-bold mb-4">Professional Brochure Design</h1>
+                    <p class="lead mb-4">Create stunning brochures that effectively showcase your products, services, and brand story to your target audience.</p>
+                    <a href="../index.html#contact" class="btn btn-light btn-lg">Get Started</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="../images/brochure.png" alt="Brochure Design" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <h2 class="mb-4">Our Brochure Design Services</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <h3>Custom Layout Design</h3>
+                                <p>Unique and professional layouts that effectively present your content in an engaging way.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                                <i class="fas fa-palette"></i>
+                                <h3>Brand-Consistent Design</h3>
+                                <p>Designs that perfectly align with your brand identity, colors, and messaging.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                                <i class="fas fa-print"></i>
+                                <h3>Print-Ready Files</h3>
+                                <p>High-resolution files optimized for professional printing with perfect color accuracy.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                                <i class="fas fa-sync"></i>
+                                <h3>Multiple Revisions</h3>
+                                <p>Unlimited revisions until you're completely satisfied with the design.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="service-sidebar">
+                        <div class="sidebar-card">
+                            <h3>Brochure Types</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check"></i> Tri-Fold Brochures</li>
+                                <li><i class="fas fa-check"></i> Bi-Fold Brochures</li>
+                                <li><i class="fas fa-check"></i> Z-Fold Brochures</li>
+                                <li><i class="fas fa-check"></i> Gate-Fold Brochures</li>
+                                <li><i class="fas fa-check"></i> Custom Fold Brochures</li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-card">
+                            <h3>Design Features</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check"></i> High-Quality Images</li>
+                                <li><i class="fas fa-check"></i> Custom Typography</li>
+                                <li><i class="fas fa-check"></i> Special Finishes</li>
+                                <li><i class="fas fa-check"></i> Interactive Elements</li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-card">
+                            <h3>Get in Touch</h3>
+                            <p>Ready to create your brochure? Contact us today!</p>
+                            <a href="../index.html#contact" class="btn btn-primary w-100">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brochure Gallery -->
+    <section class="brochure-gallery">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Brochure Designs</h2>
+                <p class="section-subtitle">Explore our portfolio of stunning brochure designs</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="../images/brochure1.jpg" alt="Brochure Design 1">
+                        <div class="gallery-overlay">
+                            <h4>Corporate Brochure</h4>
+                            <p>Professional design for business</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="../images/brochure2.jpg" alt="Brochure Design 2">
+                        <div class="gallery-overlay">
+                            <h4>Product Catalog</h4>
+                            <p>Showcase your products</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <img src="../images/brochure3.jpg" alt="Brochure Design 3">
+                        <div class="gallery-overlay">
+                            <h4>Service Brochure</h4>
+                            <p>Highlight your services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2>Ready to Create Your Brochure?</h2>
+                    <p class="lead mb-4">Let's design something extraordinary together</p>
+                    <a href="../index.html#contact" class="btn btn-lg">Start Your Project Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Aum Digital Marketing is your partner in creating a strong digital presence. We help businesses grow through innovative digital solutions.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61563426389548"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/9316053654"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/aum_digital_marketing_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/priyanka-udani-024318330/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-4">
+                <p>&copy; 2024 Aum Digital Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html> 

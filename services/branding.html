@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding & Advertising - AUM Digital Marketing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1d4ed8;
+            --accent-color: #f59e0b;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: var(--light-color);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark-color), #0f172a);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        /* Brand Showcase */
+        .brand-showcase {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .showcase-card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .showcase-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .showcase-card:hover .showcase-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .showcase-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .showcase-description {
+            color: #64748b;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 100px 0;
+            background: var(--light-color);
+        }
+
+        .process-card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            position: relative;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .process-number {
+            position: absolute;
+            top: -20px;
+            left: 40px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .case-study-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .case-study-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .case-study-content {
+            padding: 30px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .showcase-card {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-text">AUM Digital Marketing</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="graphics-design.html"><i class="fas fa-paint-brush"></i> Graphics & Creative Designs</a></li>
+                            <li><a class="dropdown-item" href="web-design.html"><i class="fas fa-globe"></i> Web Development</a></li>
+                            <li><a class="dropdown-item" href="digital-marketing.html"><i class="fas fa-chart-line"></i> Digital Marketing & SEO</a></li>
+                            <li><a class="dropdown-item active" href="branding.html"><i class="fas fa-bullhorn"></i> Branding & Identity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content" data-aos="fade-right">
+                    <h1 class="hero-title">We Build Brands That Stand Out</h1>
+                    <p class="hero-subtitle">Transform your business with a powerful brand identity that resonates with your audience and drives growth.</p>
+                    <a href="../index.html#contact" class="btn btn-primary btn-lg">Start Your Brand Journey</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="showcase-card">
+                        <div class="showcase-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="showcase-title">Brand Identity</h3>
+                        <p class="showcase-description">Create a unique and memorable brand that tells your story and connects with your audience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Showcase -->
+    <section class="brand-showcase">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="showcase-card">
+                        <div class="showcase-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 class="showcase-title">Brand Strategy</h3>
+                        <p class="showcase-description">Develop a comprehensive brand strategy that aligns with your business goals and target audience.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="showcase-card">
+                        <div class="showcase-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="showcase-title">Visual Identity</h3>
+                        <p class="showcase-description">Create a cohesive visual identity that reflects your brand's personality and values.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="showcase-card">
+                        <div class="showcase-icon">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <h3 class="showcase-title">Advertising</h3>
+                        <p class="showcase-description">Strategic advertising campaigns that effectively communicate your brand message.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <h3>Discovery & Research</h3>
+                        <p>We begin by understanding your business, target audience, and market position to create a solid foundation for your brand.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <h3>Strategy Development</h3>
+                        <p>Creating a comprehensive brand strategy that aligns with your business goals and resonates with your audience.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <h3>Design & Creation</h3>
+                        <p>Bringing your brand to life through visual identity, messaging, and creative assets.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <h3>Implementation</h3>
+                        <p>Rolling out your brand across all touchpoints and ensuring consistent execution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="case-study-card">
+                        <img src="../images/branding-case-1.jpg" alt="Brand Case Study" class="case-study-image">
+                        <div class="case-study-content">
+                            <h3>Brand Transformation</h3>
+                            <p>See how we helped a local business transform their brand and increase customer engagement by 200%.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-study-card">
+                        <img src="../images/branding-case-2.jpg" alt="Brand Case Study" class="case-study-image">
+                        <div class="case-study-content">
+                            <h3>Rebranding Success</h3>
+                            <p>Discover how we revitalized an established brand and increased market share by 150%.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2 class="cta-title">Let's Create Something Iconic</h2>
+                <p class="mb-4">Transform your brand into a powerful asset that drives business growth</p>
+                <a href="../index.html#contact" class="btn cta-button">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Aum Digital Marketing is your partner in creating a strong digital presence.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61563426389548"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/9316053654"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/aum_digital_marketing_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/priyanka-udani-024318330/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-4">
+                <p>&copy; 2024 Aum Digital Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html> 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banner Design - AUM Digital Marketing</title>
+    <title>Birthday Card Design - AUM Digital Marketing</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,67 +13,74 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        .banner-hero {
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        .birthday-header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
             color: white;
-            padding: 100px 0;
+            padding: 120px 0;
             position: relative;
             overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
-        .banner-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('../images/banner-pattern.png') repeat;
-            opacity: 0.1;
+
+        .birthday-features {
+            padding: 80px 0;
+            background: #f8f9fa;
         }
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            margin-bottom: 30px;
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
-        .gallery-item img {
-            transition: transform 0.5s ease;
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
         }
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
+
+        .birthday-showcase {
+            padding: 80px 0;
         }
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
+
+        .showcase-card {
+            border-radius: 20px;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
-        .service-card:hover {
+
+        .showcase-card:hover {
             transform: translateY(-10px);
         }
-        .cta-section {
-            background: linear-gradient(135deg, #a777e3, #6e8efb);
+
+        .showcase-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .birthday-cta {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
         }
     </style>
@@ -92,7 +99,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
+                        <a class="nav-link" href="../index.html#home">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -116,81 +123,90 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="banner-hero">
+    <!-- Birthday Header -->
+    <section class="birthday-header">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <h1 class="display-4 fw-bold mb-4">Stunning Banner Designs</h1>
-                    <p class="lead mb-4">Transform your message into eye-catching visuals that capture attention and drive engagement.</p>
-                    <a href="../index.html#contact" class="btn btn-light btn-lg">Get Started</a>
+                    <div class="header-content">
+                        <span class="section-badge">Creative Services</span>
+                        <h1 class="display-4 fw-bold mb-4">Custom Birthday Card Design</h1>
+                        <p class="lead mb-4">Make birthdays extra special with our custom-designed birthday cards. We create unique, personalized cards that capture the essence of your celebration and create lasting memories.</p>
+                        <div class="header-cta">
+                            <a href="../index.html#contact" class="btn btn-light btn-lg me-3">Order Now</a>
+                            <a href="#showcase" class="btn btn-outline-light btn-lg">View Samples</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <img src="../images/banner-desing.png" alt="Banner Design" class="img-fluid">
+                    <div class="header-image">
+                        <img src="../images/birthday-card.jpg" alt="Birthday Card Design" class="img-fluid rounded-3 shadow-lg">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="py-5">
+    <!-- Features Section -->
+    <section class="birthday-features">
         <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Why Choose Our Birthday Cards</h2>
+                <p class="section-subtitle">We create cards that make celebrations memorable</p>
+            </div>
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="service-card">
-                        <i class="fas fa-paint-brush fa-3x mb-4 text-primary"></i>
-                        <h3>Website Banners</h3>
-                        <p>Eye-catching banners for your website and landing pages.</p>
-                    </div>
-                </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <i class="fas fa-hashtag fa-3x mb-4 text-primary"></i>
-                        <h3>Social Media Banners</h3>
-                        <p>Engaging banners for all social media platforms.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Custom Designs</h3>
+                        <p>Unique and personalized designs tailored to your preferences and occasion.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <i class="fas fa-bullhorn fa-3x mb-4 text-primary"></i>
-                        <h3>Promotional Banners</h3>
-                        <p>Attractive banners for events and promotions.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Special Effects</h3>
+                        <p>Premium finishes and special effects to make your card stand out.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-print"></i>
+                        </div>
+                        <h3>High-Quality Print</h3>
+                        <p>Professional printing on premium paper for the perfect finish.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="py-5 bg-light">
+    <!-- Showcase Section -->
+    <section class="birthday-showcase" id="showcase">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-5 fw-bold">Our Banner Gallery</h2>
-                <p class="lead">Explore our recent banner design projects</p>
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Birthday Card Designs</h2>
+                <p class="section-subtitle">Explore our collection of birthday card designs</p>
             </div>
-            <div class="row">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="gallery-item">
-                        <img src="../images/banner-design-photo1.jpg" alt="Banner Design 1" class="img-fluid">
-                        <!-- <div class="gallery-overlay">
-                            <h4 class="text-white">Website Banner</h4>
-                        </div> -->
-                    </div>
-                </div>
+            <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="gallery-item">
-                        <img src="../images/banner2.jpg" alt="Banner Design 2" class="img-fluid">
-                        <div class="gallery-overlay">
-                            <h4 class="text-white">Social Media Banner</h4>
-                        </div>
+                    <div class="showcase-card">
+                        <img src="../images/birthday-card-1.jpg" alt="Birthday Card Design 1">
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-item">
-                        <img src="../images/banner3.jpg" alt="Banner Design 3" class="img-fluid">
-                        <div class="gallery-overlay">
-                            <h4 class="text-white">Promotional Banner</h4>
-                        </div>
+                    <div class="showcase-card">
+                        <img src="../images/birthday-card-2.jpg" alt="Birthday Card Design 2">
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="showcase-card">
+                        <img src="../images/birthday-card-3.jpg" alt="Birthday Card Design 3">
                     </div>
                 </div>
             </div>
@@ -198,13 +214,13 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="birthday-cta">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up">
-                    <h2 class="display-5 fw-bold mb-4">Ready to Create Stunning Banners?</h2>
-                    <p class="lead mb-4">Let's transform your ideas into eye-catching designs that drive results.</p>
-                    <a href="../index.html#contact" class="btn btn-light btn-lg">Start Your Project</a>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2>Ready to Create Special Birthday Cards?</h2>
+                    <p class="lead mb-4">Let's design the perfect birthday card for your celebration</p>
+                    <a href="../index.html#contact" class="btn btn-light btn-lg">Order Your Custom Card</a>
                 </div>
             </div>
         </div>
@@ -216,12 +232,12 @@
             <div class="row">
                 <div class="col-md-4">
                     <h5>About Us</h5>
-                    <p>Aum Digital Marketing is your partner in creating a strong digital presence. We help businesses grow through innovative digital solutions.</p>
+                    <p>AUM Digital Marketing is your partner in creating a strong digital presence. We help businesses grow through innovative digital solutions.</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Quick Links</h5>
                     <ul class="footer-links">
-                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#home">Home</a></li>
                         <li><a href="../index.html#services">Services</a></li>
                         <li><a href="../index.html#about">About</a></li>
                         <li><a href="../index.html#contact">Contact</a></li>
@@ -233,7 +249,7 @@
                         <a href="https://www.facebook.com/profile.php?id=61563426389548"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/9316053654"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://www.instagram.com/aum_digital_marketing_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/priyanka-udani-024318330/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/priyanka-udani-024318330/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>

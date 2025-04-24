@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphics & Creative Designs - AUM Digital Marketing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6e8efb;
+            --secondary-color: #a777e3;
+            --accent-color: #ff6b6b;
+        }
+        
+        .creative-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .creative-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../images/pattern.png') repeat;
+            opacity: 0.1;
+            animation: patternMove 20s linear infinite;
+        }
+        
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .design-showcase {
+            background: #f8f9fa;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .design-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .design-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .design-card:hover {
+            transform: translateY(-15px);
+        }
+        
+        .design-card:hover::before {
+            opacity: 0.1;
+        }
+        
+        .design-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .design-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .design-card-content {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-timeline {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../images/pattern.png') repeat;
+            opacity: 0.05;
+            animation: patternMove 20s linear infinite;
+        }
+        
+        .process-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .process-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .process-item {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .process-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .process-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            flex-shrink: 0;
+            box-shadow: 0 10px 20px rgba(110, 142, 251, 0.3);
+        }
+        
+        .process-content {
+            flex: 1;
+        }
+        
+        .process-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .process-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .process-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .process-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .process-features li {
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .process-features li i {
+            color: var(--primary-color);
+        }
+        
+        .process-connector {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+        
+        .process-row:last-child .process-connector {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .process-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+            
+            .process-icon {
+                margin-bottom: 20px;
+            }
+            
+            .process-features {
+                justify-content: center;
+            }
+        }
+        
+        .creative-cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        .creative-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../images/pattern.png') repeat;
+            opacity: 0.1;
+            animation: patternMove 20s linear infinite;
+        }
+        
+        .creative-cta .btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .creative-cta .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+        
+        .creative-cta .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .creative-cta .btn:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .stats-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .design-process {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .process-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .process-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .process-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .process-content p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .process-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .process-list li {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .process-list li i {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 767px) {
+            .process-card {
+                padding: 25px;
+            }
+
+            .process-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/Aum.png" alt="AUM Digital Logo" class="navbar-logo">
+                <span class="brand-text">AUM Digital Marketing</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="graphics-design.html"><i class="fas fa-paint-brush"></i> Graphics & Creative Designs</a></li>
+                            <li><a class="dropdown-item" href="web-design.html"><i class="fas fa-globe"></i> Web Development</a></li>
+                            <li><a class="dropdown-item" href="digital-marketing.html"><i class="fas fa-chart-line"></i> Digital Marketing & SEO</a></li>
+                            <li><a class="dropdown-item" href="branding.html"><i class="fas fa-bullhorn"></i> Branding & Identity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Creative Header -->
+    <section class="creative-header">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="header-content">
+                        <span class="section-badge">Creative Services</span>
+                        <h1 class="display-4 fw-bold mb-4">Transform Your Vision Into Reality</h1>
+                        <p class="lead mb-4">We craft stunning visual experiences that captivate your audience and elevate your brand's presence. Our creative team brings your ideas to life with innovative designs that make a lasting impression.</p>
+                        <div class="header-cta">
+                            <a href="../index.html#contact" class="btn btn-light btn-lg me-3">Start Your Project</a>
+                            <a href="#portfolio" class="btn btn-outline-light btn-lg">View Our Work</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="header-image">
+                        <img src="../images/3545757.jpg" alt="Creative Design" class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section
+    <section class="stats-section">
+        <div class="container"> -->
+            <!-- <div class="row">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Creative Experts</div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
+                    </div>
+                </div>
+            </div> -->
+        <!-- </div>
+    </section> -->
+
+    <!-- Design Showcase -->
+    <section class="design-showcase">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Our Creative Services</h2>
+                <p class="section-subtitle">Explore our comprehensive design solutions</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="design-card">
+                        <img src="../images/LOGO.jpeg" alt="Logo Design">
+                        <div class="design-card-content">
+                            <h3>Logo Design</h3>
+                            <p>Create a memorable brand identity with custom logo designs that reflect your business values.</p>
+                            <a href="logo-design.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="design-card">
+                        <img src="../images/social-media-posts-design-two.webp" alt="Social Media">
+                        <div class="design-card-content">
+                            <h3>Social Media Graphics</h3>
+                            <p>Engaging social media posts and stories that increase your brand's visibility.</p>
+                            <a href="social-media.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="design-card">
+                        <img src="../images/banner-desing.png" alt="Banner Design">
+                        <div class="design-card-content">
+                            <h3>Banner Design</h3>
+                            <p>Eye-catching banners for websites and advertising campaigns that drive engagement.</p>
+                            <a href="banner-design.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="design-card">
+                        <img src="../images/brochure.png" alt="Brochure Design">
+                        <div class="design-card-content">
+                            <h3>Brochure Design</h3>
+                            <p>Professional brochures that showcase your products and services effectively.</p>
+                            <a href="brochure-design.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="design-card">
+                        <img src="../images/PACKET-PNG.png" alt="Packaging Design">
+                        <div class="design-card-content">
+                            <h3>Packaging Design</h3>
+                            <p>Eye-catching packaging designs that make your products stand out on shelves.</p>
+                            <a href="packaging-design.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="design-card">
+                        <img src="../images/businesscard.jpg" alt="Business Card Design">
+                        <div class="design-card-content">
+                            <h3>Business Card Design</h3>
+                            <p>Professional business cards that leave a lasting impression on your clients.</p>
+                            <a href="business-card.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="design-card">
+                        <img src="../images/Pamphlet & Flyer Design.png" alt="Pamphlet Design">
+                        <div class="design-card-content">
+                            <h3>Pamphlet Design</h3>
+                            <p>Informative and attractive pamphlets that effectively communicate your message.</p>
+                            <a href="pamphlet-design.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="design-card">
+                        <img src="../images/birthday-card.jpg" alt="Birthday Card Design">
+                        <div class="design-card-content">
+                            <h3>Birthday Card Design</h3>
+                            <p>Custom birthday cards that make celebrations more special and memorable.</p>
+                            <a href="birthday-card.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-md-4" data-aos="fade-up" data-aos-delay="900">
+                    <div class="design-card">
+                        <img src="../images/invitation-card.jpg" alt="Invitation Card Design">
+                        <div class="design-card-content">
+                            <h3>Invitation Card Design</h3>
+                            <p>Elegant and personalized invitation cards for all your special occasions.</p>
+                            <a href="invitation-card.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Process Section -->
+    <section class="design-process">
+        <div class="container">
+            <div class="section-header text-center mb-4" data-aos="fade-up">
+                <span class="section-badge">Process</span>
+                <h2 class="section-title">Our Design Steps</h2>
+            </div>
+
+            <div class="process-wrapper">
+                <div class="row g-4">
+                    <!-- Step 1 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                        <div class="process-card">
+                            <div class="process-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="process-content">
+                                <h3>01. Discovery</h3>
+                                <p>Understanding your brand needs</p>
+                                <ul class="process-list">
+                                    <li><i class="fas fa-check"></i> Brand Analysis</li>
+                                    <li><i class="fas fa-check"></i> Market Research</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="process-card">
+                            <div class="process-icon">
+                                <i class="fas fa-pencil-ruler"></i>
+                            </div>
+                            <div class="process-content">
+                                <h3>02. Design</h3>
+                                <p>Creating initial concepts</p>
+                                <ul class="process-list">
+                                    <li><i class="fas fa-check"></i> Concept Creation</li>
+                                    <li><i class="fas fa-check"></i> Color Selection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="process-card">
+                            <div class="process-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <div class="process-content">
+                                <h3>03. Refine</h3>
+                                <p>Perfecting the design</p>
+                                <ul class="process-list">
+                                    <li><i class="fas fa-check"></i> Feedback</li>
+                                    <li><i class="fas fa-check"></i> Enhancements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="process-card">
+                            <div class="process-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="process-content">
+                                <h3>04. Deliver</h3>
+                                <p>Final handover</p>
+                                <ul class="process-list">
+                                    <li><i class="fas fa-check"></i> File Preparation</li>
+                                    <li><i class="fas fa-check"></i> Project Handover</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative CTA -->
+    <section class="creative-cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h2>Ready to Transform Your Brand?</h2>
+                    <p class="lead mb-4">Let's create something extraordinary together</p>
+                    <a href="../index.html#contact" class="btn btn-lg">Start Your Project Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>AUM Digital Marketing is your partner in creating a strong digital presence. We help businesses grow through innovative digital solutions.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#home">Home</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61563426389548"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/9316053654"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/aum_digital_marketing_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/priyanka-udani-024318330/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-4">
+                <p>&copy; 2024 Aum Digital Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html> 

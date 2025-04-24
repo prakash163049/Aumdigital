@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card Design - AUM Digital Marketing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .card-types-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .card-type {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .card-type:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card-type-icon {
+            font-size: 1.8rem;
+            color: #6e8efb;
+            margin-bottom: 15px;
+        }
+        
+        .card-type h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .card-type p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .card-type-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .card-type-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+        
+        .card-type-features li i {
+            color: #6e8efb;
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .nfc-card {
+            border-left: 3px solid #6e8efb;
+        }
+        
+        .google-review-card {
+            border-left: 3px solid #34a853;
+        }
+        
+        .smart-standee-card {
+            border-left: 3px solid #ea4335;
+        }
+        
+        .social-media-card {
+            border-left: 3px solid #1da1f2;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .service-details {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-color: #6e8efb;
+        }
+
+        .feature-item i {
+            font-size: 1.5rem;
+            color: #6e8efb;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -moz-background-clip: text;
+            -o-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .service-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-color: #6e8efb;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-card ul li {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            color: #666;
+        }
+
+        .sidebar-card ul li i {
+            color: #6e8efb;
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Add these new styles for the CTA button */
+        .cta-button-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../images/pattern.png') repeat;
+            opacity: 0.05;
+            animation: patternMove 20s linear infinite;
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .cta-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .create-card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            -moz-background-clip: padding-box;
+            -o-background-clip: padding-box;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(110, 142, 251, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .create-card-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .create-card-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(110, 142, 251, 0.4);
+        }
+
+        .create-card-btn:hover::before {
+            left: 100%;
+        }
+
+        .create-card-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(110, 142, 251, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Our Work Section Styles */
+        .our-work-section {
+            background: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .our-work-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../images/pattern.png') repeat;
+            opacity: 0.05;
+            animation: patternMove 20s linear infinite;
+        }
+
+        .portfolio-gallery {
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            color: white;
+            text-align: left;
+        }
+
+        .overlay-content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .overlay-content p {
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-item {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/Aum.png" alt="AUM Digital Logo" class="navbar-logo">
+                <span class="brand-text">AUM Digital Marketing</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="graphics-design.html"><i class="fas fa-paint-brush"></i> Graphics & Creative Designs</a></li>
+                            <li><a class="dropdown-item" href="web-design.html"><i class="fas fa-globe"></i> Web Development</a></li>
+                            <li><a class="dropdown-item" href="digital-marketing.html"><i class="fas fa-chart-line"></i> Digital Marketing & SEO</a></li>
+                            <li><a class="dropdown-item" href="branding.html"><i class="fas fa-bullhorn"></i> Branding & Identity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Header -->
+    <section class="service-header py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="section-badge">Our Services</span>
+                    <h1 class="display-4 fw-bold mb-4">Professional Card Design</h1>
+                    <p class="lead mb-4">Create innovative and professional cards that make a lasting impression and effectively represent your brand in the digital age.</p>
+                    <a href="../index.html#contact" class="btn btn-primary btn-lg">Get Started</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="../images/businesscard.jpg" alt="Business Card Design" class="img-fluid rounded-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card Types Section -->
+    <section class="card-types-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="section-title">Our Card Solutions</h2>
+                <p class="section-subtitle">Explore our range of innovative card designs</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-type nfc-card">
+                        <i class="fas fa-wifi card-type-icon"></i>
+                        <h3>NFC Cards</h3>
+                        <p>Modern, interactive cards with NFC technology for seamless digital sharing.</p>
+                        <ul class="card-type-features">
+                            <li><i class="fas fa-check"></i> Tap-to-share info</li>
+                            <li><i class="fas fa-check"></i> Digital portfolio</li>
+                            <li><i class="fas fa-check"></i> Social links</li>
+                            <li><i class="fas fa-check"></i> Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-type google-review-card">
+                        <i class="fas fa-star card-type-icon"></i>
+                        <h3>Google Review Cards</h3>
+                        <p>Professionally designed cards to encourage customer reviews.</p>
+                        <ul class="card-type-features">
+                            <li><i class="fas fa-check"></i> QR code links</li>
+                            <li><i class="fas fa-check"></i> Custom review links</li>
+                            <li><i class="fas fa-check"></i> Branded design</li>
+                            <li><i class="fas fa-check"></i> Multi-language</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-type smart-standee-card">
+                        <i class="fas fa-id-card card-type-icon"></i>
+                        <h3>Smart Standee Cards</h3>
+                        <p>Innovative standee cards combining style with functionality.</p>
+                        <ul class="card-type-features">
+                            <li><i class="fas fa-check"></i> Self-standing</li>
+                            <li><i class="fas fa-check"></i> Premium materials</li>
+                            <li><i class="fas fa-check"></i> Custom shapes</li>
+                            <li><i class="fas fa-check"></i> Interactive</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-type social-media-card">
+                        <i class="fas fa-share-alt card-type-icon"></i>
+                        <h3>Social Media Cards</h3>
+                        <p>Connect offline and online presence with social cards.</p>
+                        <ul class="card-type-features">
+                            <li><i class="fas fa-check"></i> Platform links</li>
+                            <li><i class="fas fa-check"></i> QR codes</li>
+                            <li><i class="fas fa-check"></i> Hashtags</li>
+                            <li><i class="fas fa-check"></i> Follow buttons</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <h2 class="section-title">Our Card Design Services</h2>
+                    <div class="service-features">
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-pencil-ruler"></i>
+                            <h3>Custom Design</h3>
+                            <p>Unique card designs that reflect your brand identity and professional image.</p>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-palette"></i>
+                            <h3>Premium Finishes</h3>
+                            <p>High-quality printing with various finishes including matte, glossy, and spot UV.</p>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-print"></i>
+                            <h3>Print-Ready Files</h3>
+                            <p>High-resolution files optimized for professional printing with perfect color accuracy.</p>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                            <i class="fas fa-sync"></i>
+                            <h3>Multiple Revisions</h3>
+                            <p>Unlimited revisions until you're completely satisfied with the design.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#our-work" class="btn btn-outline-primary" onclick="document.getElementById('our-work').scrollIntoView({behavior: 'smooth'})">
+                            <i class="fas fa-images me-2"></i>View Our Work
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="service-sidebar">
+                        <div class="sidebar-card">
+                            <h3>Card Features</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Standard & Custom Sizes</li>
+                                <li><i class="fas fa-check"></i> Double-Sided Printing</li>
+                                <li><i class="fas fa-check"></i> QR Code Integration</li>
+                                <li><i class="fas fa-check"></i> Special Finishes</li>
+                                <li><i class="fas fa-check"></i> Eco-Friendly Options</li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-card">
+                            <h3>Get in Touch</h3>
+                            <p class="mb-3" style="font-size: 0.85rem;">Ready to create your professional cards? Contact us today!</p>
+                            <a href="../index.html#contact" class="btn btn-primary w-100">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work Section -->
+    <section id="our-work" class="our-work-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-badge">Our Work</span>
+                <h2 class="section-title">Business Card Portfolio</h2>
+                <p class="section-subtitle">Explore some of our recent business card designs</p>
+            </div>
+            
+            <div class="portfolio-gallery">
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="../images/bussinesscard-photo.jpg" alt="Business Card Design Example 1" class="img-fluid">
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <h4>Corporate Identity</h4>
+                                        <p>Professional Business Card</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="../images/businesscard.jpg" alt="Business Card Design Example 2" class="img-fluid">
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <h4>Creative Design</h4>
+                                        <p>Modern Business Card</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="../images/businesscard-photo2.jpg" alt="Business Card Design Example 3" class="img-fluid">
+                                <div class="portfolio-overlay">
+                                    <div class="overlay-content">
+                                        <h4>Premium Finish</h4>
+                                        <p>Luxury Business Card</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this new section before the footer -->
+    <section class="cta-button-section">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2 class="cta-title">Ready to Create Your Business Card?</h2>
+                <p class="cta-subtitle">Design a professional card that stands out and represents your brand perfectly</p>
+                <a href="../index.html#contact" class="create-card-btn">
+                    <i class="fas fa-magic"></i>
+                    Make Your Business Card Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Aum Digital Marketing is your partner in creating a strong digital presence. We help businesses grow through innovative digital solutions.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61563426389548"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/9316053654"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/aum_digital_marketing_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/priyanka-udani-024318330/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-4">
+                <p>&copy; 2024 Aum Digital Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html> 
