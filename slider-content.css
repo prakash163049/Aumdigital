@@ -1,7 +1,7 @@
 .slider-content {
     position: absolute;
     top: 40%;
-    left: 10%;
+    left: 4%;
     transform: translateY(-50%);
     color: #fff;
     max-width: 600px;
@@ -14,7 +14,7 @@
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    line-height: 1.2;
+    line-height: 1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
