@@ -306,48 +306,76 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Testimonials Carousel
+// Testimonials Interaction
 document.addEventListener('DOMContentLoaded', function() {
-    const track = document.querySelector('.testimonials-track');
-    const cards = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.querySelector('.testimonial-nav.prev');
-    const nextBtn = document.querySelector('.testimonial-nav.next');
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    const paginationDots = document.querySelectorAll('.pagination-dot');
+    const itemsPerPage = 3;
+    let currentPage = 0;
     
-    let currentIndex = 0;
-    const cardWidth = cards[0].offsetWidth + 30; // Width + gap
+    // Initially show only the first set of testimonials
+    updateTestimonialDisplay();
     
-    function updateCarousel() {
-        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        
-        // Update button states
-        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-        nextBtn.style.opacity = currentIndex >= cards.length - 3 ? '0.5' : '1';
+    // Add click event to pagination dots
+    paginationDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentPage = index;
+            updateActiveDot();
+            updateTestimonialDisplay();
+        });
+    });
+    
+    function updateActiveDot() {
+        paginationDots.forEach((dot, index) => {
+            if (index === currentPage) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
     }
     
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
+    function updateTestimonialDisplay() {
+        const startIdx = currentPage * itemsPerPage;
+        const endIdx = startIdx + itemsPerPage;
+        
+        testimonialItems.forEach((item, index) => {
+            if (index >= startIdx && index < endIdx) {
+                item.style.display = 'flex';
+                // Add animation
+                item.style.animation = `fadeIn 0.5s ease forwards ${(index - startIdx) * 0.2}s`;
+                item.style.opacity = '0';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
     
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < cards.length - 3) {
-            currentIndex++;
-            updateCarousel();
+    // Add responsive behavior for the grid
+    function updateGridLayout() {
+        const container = document.querySelector('.testimonials-grid');
+        if (container) {
+            if (window.innerWidth < 992) {
+                // Show only the current testimonial on mobile
+                testimonialItems.forEach((item, index) => {
+                    if (index === currentPage) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            } else {
+                // On desktop, show items by page
+                updateTestimonialDisplay();
+            }
         }
-    });
+    }
     
-    // Initial state
-    updateCarousel();
+    // Listen for window resize
+    window.addEventListener('resize', updateGridLayout);
     
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        const newCardWidth = cards[0].offsetWidth + 30;
-        if (newCardWidth !== cardWidth) {
-            updateCarousel();
-        }
-    });
+    // Initial layout
+    updateGridLayout();
 });
 
 // Hero Slider
