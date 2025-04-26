@@ -14,6 +14,40 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
+// Fix for Mobile Carousel Controls
+document.addEventListener('DOMContentLoaded', function() {
+    const heroCarousel = document.getElementById('heroCarousel');
+    if (heroCarousel) {
+        const prevButton = heroCarousel.querySelector('.carousel-control-prev');
+        const nextButton = heroCarousel.querySelector('.carousel-control-next');
+        
+        // Enhanced click handling for mobile
+        if (prevButton && nextButton) {
+            // Add touchstart event for better mobile responsiveness
+            prevButton.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                new bootstrap.Carousel(heroCarousel).prev();
+            });
+            
+            nextButton.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                new bootstrap.Carousel(heroCarousel).next();
+            });
+            
+            // Make sure click events still work
+            prevButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                new bootstrap.Carousel(heroCarousel).prev();
+            });
+            
+            nextButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                new bootstrap.Carousel(heroCarousel).next();
+            });
+        }
+    }
+});
+
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
